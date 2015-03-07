@@ -9,14 +9,11 @@ URL:              https://github.com/cgwalters/rpmdistro-gitoverlay
 # Generated via "git archive"
 Source0:          %{name}-%{version}.tar.gz
 
-BuildRequires:    python-setuptools
-BuildRequires:    python2-devel
+BuildRequires:    autoconf automake libtool
 BuildRequires:    PyYAML
 
-Requires:         python-setuptools
 Requires:         PyYAML
 Requires:         git-core
-
 
 %description
 Maintain a layer of packages on top of a base distribution.

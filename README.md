@@ -1,12 +1,16 @@
-# rdopkg
+# rpmdistro-gitoverlay
 
-`rdopkg` is RDO packaging tool. It provides automation for modifying,
-building and submitting (not only) [RDO](https://openstack.redhat.com) RPM
-packages.
+This is a tool to manage an "overlay" of packages on top of a base
+distribution, where the upstream sources come from upstream git, and
+the spec files are automatically edited.
 
-All information is provided in rdopkg manual, you can read its [nice
-source](doc/rdopkg.1.txt) or render it to HTML/man pages with asciidoc:
+The output is a yum repository; however, a signature feature is that
+the version numbers may go down.  The output RPMs will consistently have
+version numbers derived from `git describe`, and the input manifest may
+at any point use older commits.
 
-    make doc
+Currently it uses `mockchain` to build.
 
-It's planned to render the manual on RDO site as well.
+The code in this project originated from
+https://github.com/redhat-openstack/rdopkg as a baseline; however it
+is (will become) rather different.
